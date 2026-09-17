@@ -1,7 +1,15 @@
 # Feroz & Shajiya Wedding Invitation
 
-A photo-free, mobile-first Islamic wedding invitation website.
+Upload the contents of this folder to the ROOT of your GitHub repository.
 
-Upload `index.html`, `style.css`, and `script.js` to GitHub Pages or Vercel. No images or external assets are required beyond the web fonts loaded by Google Fonts.
+Required structure:
+index.html
+style.css
+script.js
+assets/logo-gold.png
+assets/logo-original.jpg
+music/wedding-music.mp3
 
-Update event timings in `index.html` when confirmed. The Google Maps button currently opens a venue search for Food Village Banquet Hall, Injambakkam, Chennai.
+The supplied calligraphy is converted to a transparent gold logo and revealed with a cinematic 3D-style CSS animation. The included MP3 is a short original placeholder ambient track. Replace it with your own music using the exact filename `music/wedding-music.mp3`.
+
+For GitHub Pages, keep all folders/files in the same structure.
