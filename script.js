@@ -1,0 +1,9 @@
+const intro=document.getElementById("intro"),main=document.getElementById("main");
+document.getElementById("open").onclick=()=>{intro.style.transition=".8s";intro.style.opacity=0;setTimeout(()=>{intro.classList.add("hidden");main.classList.remove("hidden");scrollTo(0,0)},800)};
+const target=new Date("2026-12-20T00:00:00+05:30").getTime();
+function countdown(){let d=Math.max(0,target-Date.now());document.getElementById("days").textContent=Math.floor(d/86400000);document.getElementById("hours").textContent=String(Math.floor(d/3600000)%24).padStart(2,"0");document.getElementById("minutes").textContent=String(Math.floor(d/60000)%60).padStart(2,"0");document.getElementById("seconds").textContent=String(Math.floor(d/1000)%60).padStart(2,"0")}countdown();setInterval(countdown,1000);
+new IntersectionObserver(es=>es.forEach(e=>e.isIntersecting&&e.target.classList.add("visible")),{threshold:.12}).observe(document.querySelector(".reveal"));
+document.querySelectorAll(".reveal").forEach(e=>new IntersectionObserver(es=>es.forEach(x=>x.isIntersecting&&x.target.classList.add("visible")),{threshold:.12}).observe(e));
+document.getElementById("share").onclick=async()=>{let d={title:"Feroz Khan & Shajiya Thabassum",text:"Wedding invitation — 20 December 2026, Food Village Banquet Hall, Injambakkam, Chennai.",url:location.href};if(navigator.share){try{await navigator.share(d)}catch(e){}}else{await navigator.clipboard.writeText(location.href);alert("Invitation link copied!")}};
+document.getElementById("copy").onclick=async()=>{try{await navigator.clipboard.writeText(location.href);let b=document.getElementById("copy"),t=b.textContent;b.textContent="Copied ✓";setTimeout(()=>b.textContent=t,1500)}catch(e){alert("Please copy the browser link manually.")}};
+document.getElementById("music").onclick=()=>alert("No music file is included. The invitation is designed to work without photos or audio.");
