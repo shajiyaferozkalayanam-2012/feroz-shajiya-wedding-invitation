@@ -1,0 +1,15 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Feroz and Shajiya//Wedding Invitation//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:feroz-shajiya-nikah-20261220@wedding-invitation
+DTSTAMP:20261110T120000Z
+DTSTART:20261220T050000Z
+DTEND:20261220T093000Z
+SUMMARY:Nikah, Reception & Feast — Feroz Khan & Shajiya Thabasum
+LOCATION:Food Village Banquet Hall\, Injambakkam\, Chennai
+DESCRIPTION:Nikah: 10:30 AM - 12:00 PM IST\nReception: 12:00 PM - 3:00 PM IST\nFeast: 12:30 PM - 2:00 PM IST
+END:VEVENT
+END:VCALENDAR
