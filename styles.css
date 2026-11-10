@@ -145,3 +145,18 @@ body:before{
   background-size:180px 180px,54px 54px,54px 54px;
   opacity:.10;
 }
+
+
+/* Final refinements: CTA tagline, calendar actions and three-line poem */
+.hero-content .gold-button{display:flex;width:max-content;max-width:100%;margin:0 auto}
+.hero-content .hashtag{display:block;width:max-content;max-width:100%;margin:18px auto 0;text-align:center;position:relative}
+.poetic{max-width:760px;text-wrap:balance}
+.calendar-note{margin:10px 0 0!important;color:#d9cba9!important;font-size:12px!important;letter-spacing:.04em}
+.calendar-actions{display:flex;justify-content:center;align-items:center;flex-wrap:wrap;gap:12px;margin:22px auto 0}
+.calendar-actions .gold-button,.calendar-actions .outline-button{margin:0;min-width:180px}
+.calendar-timezone{margin:16px 0 0!important}
+@media(max-width:480px){
+  .calendar-actions{flex-direction:column}
+  .calendar-actions a{width:min(100%,260px)}
+  .poetic{font-size:18px!important;line-height:1.55!important}
+}

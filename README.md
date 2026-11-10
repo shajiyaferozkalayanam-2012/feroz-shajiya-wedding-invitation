@@ -25,3 +25,12 @@ Feroz Khan — S/O Mr. S. I. Syed Ismail & Mrs. N. K. Samsath Begum
 Shajiya Thabasum — D/o Mr. M. Usman Baig & Mrs. U. Rasul Nisha
 
 No "Groom" or "Bride" labels are displayed.
+
+
+## Music troubleshooting
+The music is user-initiated (tap the Music button; browsers block unsolicited autoplay). The player tries `wedding-music.mp3` in the repository root first, then `assets/music/wedding-music.mp3`. Upload both copies or at least keep the complete `assets/` folder. If it still fails, open the direct audio URL:
+`https://YOUR-USERNAME.github.io/YOUR-REPOSITORY/wedding-music.mp3`
+If that URL returns 404, the audio file was not uploaded to the repository root.
+
+## Calendar
+The Save the Date section includes a Google Calendar event link and a downloadable `.ics` event. The calendar entry spans 10:30 AM–3:00 PM IST and lists each function's individual timing in the description.

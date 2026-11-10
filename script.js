@@ -40,22 +40,59 @@
   const music = document.getElementById('weddingMusic');
   const musicToggle = document.getElementById('musicToggle');
   const musicLabel = document.getElementById('musicLabel');
-  musicToggle.addEventListener('click', async () => {
-    if (music.paused) {
-      try {
-        await music.play();
-        musicLabel.textContent = 'Music on';
-        musicToggle.setAttribute('aria-label', 'Pause background music');
-      } catch (error) {
-        musicLabel.textContent = 'Add music file';
-      }
+  const musicSources = ['./wedding-music.mp3', './assets/music/wedding-music.mp3'];
+  let musicSourceIndex = 0;
+
+  function setMusicLabel(label, ariaLabel) {
+    musicLabel.textContent = label;
+    musicToggle.setAttribute('aria-label', ariaLabel);
+  }
+
+  music.addEventListener('error', () => {
+    if (musicSourceIndex < musicSources.length - 1) {
+      musicSourceIndex += 1;
+      music.src = musicSources[musicSourceIndex];
+      music.load();
     } else {
-      music.pause();
-      musicLabel.textContent = 'Music off';
-      musicToggle.setAttribute('aria-label', 'Play background music');
+      setMusicLabel('Audio unavailable', 'Wedding music could not be loaded');
     }
   });
 
+  music.addEventListener('playing', () => setMusicLabel('Music on', 'Pause background music'));
+  music.addEventListener('pause', () => {
+    if (!music.ended && !music.error) setMusicLabel('Music off', 'Play background music');
+  });
+
+  musicToggle.addEventListener('click', async () => {
+    if (!music.paused) {
+      music.pause();
+      return;
+    }
+    try {
+      if (music.readyState === 0) {
+        music.src = musicSources[musicSourceIndex];
+        music.load();
+      }
+      await music.play();
+      setMusicLabel('Music on', 'Pause background music');
+    } catch (error) {
+      // If the root-level audio file is absent, try the assets folder once.
+      if (musicSourceIndex < musicSources.length - 1) {
+        musicSourceIndex += 1;
+        music.src = musicSources[musicSourceIndex];
+        music.load();
+        try {
+          await music.play();
+          setMusicLabel('Music on', 'Pause background music');
+          return;
+        } catch (fallbackError) {
+          setMusicLabel('Tap to retry', 'Retry wedding music');
+        }
+      } else {
+        setMusicLabel('Tap to retry', 'Retry wedding music');
+      }
+    }
+  });
 
 
   // Refined entrance effects: reveal content as each chapter enters view.

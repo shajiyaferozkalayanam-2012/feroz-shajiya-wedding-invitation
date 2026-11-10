@@ -13,6 +13,8 @@ REQUIRED = [
     ROOT / "assets/images/feroz-shajiya-arabic-logo.png",
     ROOT / "assets/images/islamic-geometric-tile.svg",
     ROOT / "assets/music/wedding-music.mp3",
+    ROOT / "wedding-music.mp3",
+    ROOT / "feroz-shajiya-wedding.ics",
 ]
 missing = [str(p.relative_to(ROOT)) for p in REQUIRED if not p.is_file()]
 if missing:
@@ -21,7 +23,7 @@ if missing:
 if DIST.exists():
     shutil.rmtree(DIST)
 DIST.mkdir(parents=True)
-for name in ["index.html", "styles.css", "script.js", "feroz-shajiya-arabic-logo.png", "assets"]:
+for name in ["index.html", "styles.css", "script.js", "feroz-shajiya-arabic-logo.png", "wedding-music.mp3", "feroz-shajiya-wedding.ics", "assets"]:
     src = ROOT / name
     dst = DIST / name
     if src.is_dir():
