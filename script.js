@@ -44,6 +44,39 @@
     }
   });
 
+
+
+  // Refined entrance effects: reveal content as each chapter enters view.
+  const revealTargets = document.querySelectorAll(
+    '.section > .eyebrow, .section > h2, .section > p, .section > .gold-rule, .section > .couple-names, .section > .parent-details, .section > .countdown, .section > .event-card, .section > .celebration-list, .section > .venue-card, .section > .rsvp-actions, .closing-section > *'
+  );
+  if ('IntersectionObserver' in window && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    revealTargets.forEach(el => el.classList.add('reveal-item'));
+    document.body.classList.add('motion-ready');
+    const revealObserver = new IntersectionObserver((entries, observer) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('is-visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.12, rootMargin: '0px 0px -35px 0px' });
+    revealTargets.forEach(el => revealObserver.observe(el));
+  }
+
+  // Fine golden dust drifting through the opening scene.
+  const particleLayer = document.querySelector('.ambient-particles');
+  if (particleLayer && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    for (let i = 0; i < 22; i++) {
+      const particle = document.createElement('i');
+      particle.style.left = `${(i * 47 + 9) % 100}%`;
+      particle.style.setProperty('--duration', `${10 + (i % 7) * 2.1}s`);
+      particle.style.setProperty('--delay', `${-(i % 11) * 1.7}s`);
+      particle.style.setProperty('--drift', `${((i % 5) - 2) * 22}px`);
+      particleLayer.appendChild(particle);
+    }
+  }
+
   // Optional: enter the WhatsApp number in international format, digits only.
   // Leave empty to keep RSVP as an on-page selection only.
   const whatsappNumber = '';
