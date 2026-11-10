@@ -117,3 +117,31 @@ body:before{opacity:.19;background-image:
   .countdown span{letter-spacing:.1em}
 }
 @media(prefers-reduced-motion:reduce){.couple-logo,.logo-halo,.ambient-particles i{animation:none!important}.motion-ready .reveal-item{opacity:1!important;transform:none!important}}
+
+
+/* Python-generated static edition: reliable logo placement and family hierarchy */
+.couple-logo-wrap{width:min(78vw,350px);min-height:0;display:block;margin:0 auto 24px;z-index:6}
+.couple-logo{width:100%;height:auto;max-height:230px;object-fit:contain;display:block;opacity:1;visibility:visible}
+.hero-content{z-index:6}
+.couple-family{width:min(100%,680px);margin:28px auto 24px;display:grid;grid-template-columns:1fr auto 1fr;align-items:center;gap:clamp(12px,3vw,30px)}
+.person-family{padding:14px 10px;min-width:0}
+.person-family .couple-names{margin:0 0 8px;font-size:clamp(30px,5vw,43px)}
+.family-line{font-family:var(--serif);font-size:clamp(14px,2.3vw,17px)!important;line-height:1.5;color:#e8dcc0!important;margin:0}
+.couple-divider{color:var(--gold);font-size:19px;text-shadow:0 0 16px rgba(215,173,88,.35)}
+@media(max-width:560px){
+  .couple-logo-wrap{width:min(76vw,285px);margin-bottom:20px}
+  .couple-logo{max-height:190px}
+  .couple-family{grid-template-columns:1fr;gap:4px;margin:24px auto}
+  .person-family{padding:10px 5px}
+  .person-family .couple-names{font-size:35px}
+  .couple-divider{font-size:16px;margin:2px 0}
+  .family-line{font-size:15px!important}
+}
+
+body:before{
+  background-image:url("assets/images/islamic-geometric-tile.svg"),
+    linear-gradient(45deg,transparent 46%,rgba(215,173,88,.12) 48%,transparent 50%),
+    linear-gradient(-45deg,transparent 46%,rgba(215,173,88,.10) 48%,transparent 50%);
+  background-size:180px 180px,54px 54px,54px 54px;
+  opacity:.10;
+}

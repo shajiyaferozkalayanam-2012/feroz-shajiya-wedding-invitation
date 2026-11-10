@@ -1,4 +1,16 @@
 (() => {
+
+  // Logo fallback: try the repository-root image first, then the assets path.
+  const coupleLogo = document.getElementById('coupleLogo');
+  if (coupleLogo) {
+    coupleLogo.addEventListener('error', () => {
+      if (coupleLogo.dataset.fallbackTried !== 'true') {
+        coupleLogo.dataset.fallbackTried = 'true';
+        coupleLogo.src = './assets/images/feroz-shajiya-arabic-logo.png';
+      }
+    });
+  }
+
   const weddingDate = new Date('2026-12-20T00:00:00+05:30').getTime();
   const fields = {
     days: document.getElementById('days'),

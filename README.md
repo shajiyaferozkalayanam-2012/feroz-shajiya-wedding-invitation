@@ -1,25 +1,27 @@
-# Feroz & Shajiya — Royal Emerald Wedding Invitation
+# Feroz & Shajiya — Python-assisted static wedding invitation
 
-A static, mobile-responsive wedding invitation for GitHub Pages.
+This project uses **Option A**: Python generates/validates the static site assets; GitHub Pages serves the resulting HTML, CSS, JavaScript, images and audio. GitHub Pages does not execute Python on its server.
 
-## Included
-- Royal emerald and antique-gold visual treatment with layered Islamic geometric textures
-- Supplied Arabic calligraphy logo and wedding nasheed
-- Animated opening arch, golden dust, reveal-on-scroll transitions and decorative section details
-- Countdown, event timings, venue map link and RSVP response buttons
+## Important files
+- `index.html`, `styles.css`, `script.js` — static invitation website
+- `feroz-shajiya-arabic-logo.png` — logo at repository root for a simple, reliable relative path
+- `assets/images/feroz-shajiya-arabic-logo.png` — duplicate fallback logo
+- `assets/images/islamic-geometric-tile.svg` — Python-generated ornamental texture
+- `assets/music/wedding-music.mp3` — supplied nasheed
+- `build.py` — validates assets and creates a deployable `dist/` folder
 
-## Files
-- `index.html`
-- `styles.css`
-- `script.js`
-- `assets/images/feroz-shajiya-arabic-logo.png`
-- `assets/music/wedding-music.mp3`
+## Build locally (optional)
+Run:
+```bash
+python build.py
+```
+Then upload the **contents of `dist/`** to the root of the GitHub Pages repository.
 
-## Publish / update on GitHub Pages
-Upload the complete contents of this folder to the root of your existing repository, replacing the old files and preserving the `assets/images` and `assets/music` folders. Commit the changes. Keep GitHub Pages set to `main` and `/(root)`.
+## GitHub Pages update
+Upload/replace `index.html`, `styles.css`, `script.js`, `feroz-shajiya-arabic-logo.png`, and the complete `assets/` folder in the repository root. Commit the changes. Keep the repository's existing Pages configuration (`main` / root).
 
-## Music
-The supplied audio is located at `assets/music/wedding-music.mp3`. Visitors can start it using the Music control. Browsers generally require a user gesture before audio playback.
+## Family wording
+Feroz Khan — S/O Mr. S. I. Syed Ismail & Mrs. N. K. Samsath Begum
+Shajiya Thabasum — D/o Mr. M. Usman Baig & Mrs. U. Rasul Nisha
 
-## RSVP
-RSVP buttons show an on-page confirmation. To enable WhatsApp delivery, set `whatsappNumber` in `script.js` to the destination number in international format, digits only.
+No "Groom" or "Bride" labels are displayed.
