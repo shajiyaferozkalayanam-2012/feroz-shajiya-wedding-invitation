@@ -160,3 +160,43 @@ body:before{
   .calendar-actions a{width:min(100%,260px)}
   .poetic{font-size:18px!important;line-height:1.55!important}
 }
+
+/* Invitation wording revision */
+.invitation-journey{max-width:680px;margin:28px auto 0!important;font:italic clamp(19px,3vw,25px)/1.55 var(--serif)!important;color:#e9ddc4!important;text-wrap:balance}
+.invitation-journey em{color:var(--gold-light)}
+
+
+/* ROYAL ARABIAN × MOROCCAN × OTTOMAN FUSION — rich ornamental layer */
+:root{--emerald:#06382c;--emerald-2:#0a4737;--emerald-3:#145844;--gold:#c99a45;--gold-light:#f4d995;--gold-deep:#80531c;--ivory:#f4ecd9;--parchment:#efe2c4}
+body{background:#041f19;background-image:radial-gradient(ellipse at 50% 0%,rgba(30,103,75,.26),transparent 55%),url("assets/images/islamic-geometric-tile.svg");background-size:auto,220px 220px;background-attachment:fixed}
+body:before{opacity:.13;background-size:190px 190px,54px 54px,54px 54px}
+.hero{background:radial-gradient(ellipse at 50% 42%,rgba(34,105,74,.5),transparent 48%),linear-gradient(180deg,rgba(3,25,20,.35),rgba(3,25,20,.86)),url("assets/images/islamic-geometric-tile.svg"),linear-gradient(145deg,#031c17,#0a4534 52%,#031b16);background-size:auto,auto,180px 180px,auto}
+.hero:before{inset:17px;border-radius:46% 46% 4px 4px/25% 25% 4px 4px;border-color:rgba(231,190,103,.46);box-shadow:inset 0 0 0 7px rgba(201,154,69,.045),0 0 35px rgba(201,154,69,.08)}
+.hero:after{inset:28px;border-radius:46% 46% 2px 2px/25% 25% 2px 2px;border-color:rgba(231,190,103,.3)}
+.arch-outer{width:min(88vw,760px);height:91%;top:4%;border:2px solid rgba(224,181,93,.46);border-bottom:0;border-radius:50% 50% 0 0;box-shadow:0 0 0 8px rgba(201,154,69,.035),0 0 0 10px rgba(201,154,69,.13),inset 0 0 50px rgba(201,154,69,.07)}
+.arch-inner{inset:13px;border:1px solid rgba(244,217,149,.34);border-bottom:0;border-radius:50% 50% 0 0}
+.hero-medallion{position:absolute;left:50%;top:50%;width:min(88vw,690px);aspect-ratio:1;transform:translate(-50%,-50%);border:1px solid rgba(220,177,91,.13);border-radius:50%;box-shadow:0 0 0 12px rgba(220,177,91,.025),0 0 0 24px rgba(220,177,91,.02)}
+.hero-content{max-width:760px}.couple-logo-wrap{width:min(76vw,365px);margin-bottom:12px}.couple-logo{max-height:245px;animation:logoFoil 5s ease-in-out infinite}
+.hero-names{font-size:clamp(48px,8vw,78px);text-shadow:0 3px 24px rgba(0,0,0,.35)}.hero-date{letter-spacing:.32em;color:var(--gold-light)}
+.gold-button,.outline-button{border-radius:2px!important;position:relative;box-shadow:0 8px 28px rgba(0,0,0,.24),inset 0 1px rgba(255,255,255,.16)}
+.gold-button:before,.outline-button:before{content:"";position:absolute;inset:4px;border:1px solid rgba(255,255,255,.24);pointer-events:none}
+.section{position:relative;isolation:isolate;border-top:1px solid rgba(211,168,82,.16);background-color:#06372b}
+.section:before{content:"";position:absolute;inset:16px;z-index:-1;pointer-events:none;border:1px solid rgba(218,177,95,.35);outline:1px solid rgba(218,177,95,.10);outline-offset:5px;border-radius:48% 48% 3px 3px/8% 8% 3px 3px}
+.section:after{content:"✧";position:absolute;top:22px;left:50%;transform:translateX(-50%);color:rgba(238,201,123,.82);font-size:17px;text-shadow:0 0 14px rgba(238,201,123,.3)}
+.section-ornament{color:var(--gold-light);text-shadow:0 0 18px rgba(231,190,103,.4)}.section-ornament:before{inset:-2px;border:1px solid rgba(231,190,103,.5);transform:rotate(45deg)}.section-ornament:after{inset:5px;border:1px solid rgba(231,190,103,.22)}
+.eyebrow{letter-spacing:.28em;font-size:10px!important}h2{letter-spacing:.045em;text-shadow:0 3px 22px rgba(0,0,0,.18)}
+.gold-rule{width:130px;height:1px}.couple-family{position:relative;padding:24px 18px;border:1px solid rgba(220,177,91,.42);outline:1px solid rgba(220,177,91,.13);outline-offset:6px;background:linear-gradient(135deg,rgba(9,68,50,.75),rgba(2,27,21,.82))}
+.couple-family:before,.couple-family:after{content:"❧";position:absolute;color:var(--gold-light);font-size:24px;top:50%;transform:translateY(-50%)}.couple-family:before{left:8px}.couple-family:after{right:8px}
+.person-family .couple-names{color:var(--gold-light);font-size:clamp(29px,4vw,42px)}
+.save-date-section{padding:100px 24px;background:radial-gradient(ellipse at 50% 45%,rgba(220,177,91,.10),transparent 62%),linear-gradient(180deg,#05271f,#0a4334 48%,#05251e)}
+.parchment-panel{position:relative;width:min(100%,650px);margin:auto;padding:55px 30px 48px;color:#263326;text-align:center;background:radial-gradient(circle at 15% 18%,rgba(166,122,50,.10),transparent 30%),radial-gradient(circle at 85% 80%,rgba(166,122,50,.10),transparent 30%),repeating-linear-gradient(0deg,rgba(95,70,34,.025) 0 1px,transparent 1px 5px),linear-gradient(135deg,#f7efd9,#e9d9b7);border:2px solid #bd9147;outline:1px solid rgba(238,207,141,.5);outline-offset:7px;box-shadow:0 25px 75px rgba(0,0,0,.35),inset 0 0 0 8px rgba(255,255,255,.23),inset 0 0 0 10px rgba(158,111,42,.16);clip-path:polygon(0 5%,5% 5%,5% 2%,10% 2%,10% 0,90% 0,90% 2%,95% 2%,95% 5%,100% 5%,100% 95%,95% 95%,95% 98%,90% 98%,90% 100%,10% 100%,10% 98%,5% 98%,5% 95%,0 95%)}
+.parchment-panel .section-mark{color:#9a6a2b}.parchment-panel .eyebrow{color:#8d6329}.parchment-panel h2{color:#23372b;font-size:clamp(34px,6vw,52px)}.parchment-panel .gold-rule:after{background:#f1e4c8;color:#8d6329}
+.date-emblem{display:grid;place-items:center;width:118px;height:118px;margin:22px auto 10px;border:2px solid #b98a3f;outline:1px solid rgba(185,138,63,.45);outline-offset:5px;border-radius:50%;font:600 65px/1 var(--serif);color:#254235;box-shadow:inset 0 0 0 7px rgba(185,138,63,.12)}
+.date-weekday{margin:10px 0 0!important;color:#6d512c!important;letter-spacing:.35em;font-size:12px!important}.date-month{margin:0 0 18px!important;color:#273d30!important;font:500 clamp(27px,5vw,40px)/1.2 var(--serif)!important;letter-spacing:.08em}.date-month span{color:#9a6a2b}
+.calendar-note,.calendar-timezone{color:#725a38!important}.calendar-actions .gold-button{background:linear-gradient(135deg,#9d702f,#d4aa5b);color:#172c22}.calendar-actions .outline-button{color:#765425;border-color:#a87c3c;background:transparent}.calendar-actions .outline-button:before{border-color:rgba(151,105,43,.3)}
+.countdown-section{background:radial-gradient(ellipse at 50% 45%,rgba(22,94,68,.42),transparent 62%),url("assets/images/islamic-geometric-tile.svg"),linear-gradient(135deg,#031d18,#0a3b2e 50%,#031e18);background-size:auto,190px 190px,auto}.countdown{border:1px solid rgba(222,181,98,.42);outline:1px solid rgba(222,181,98,.13);outline-offset:6px;padding:28px 16px}.countdown div{border:1px solid rgba(222,181,98,.28);margin:5px;background:rgba(2,25,19,.28)}.countdown strong{color:#f2d28d}
+.celebration-list article{border:1px solid rgba(221,178,91,.43);border-left:1px solid rgba(221,178,91,.43);outline:1px solid rgba(221,178,91,.12);outline-offset:4px;padding:24px 18px;background:linear-gradient(120deg,rgba(16,83,61,.8),rgba(2,27,21,.88))}.celebration-list article:after{content:"✦";position:absolute;right:14px;top:12px;color:rgba(235,199,120,.7)}
+.venue-card{max-width:560px;padding:45px 26px}.rsvp-actions{gap:15px}
+.closing-section{background:radial-gradient(ellipse at 50% 0%,rgba(28,91,67,.35),transparent 54%),url("assets/images/islamic-geometric-tile.svg"),linear-gradient(180deg,#062b24,#021813);background-size:auto,190px 190px,auto}.closing-arabic{max-width:820px;margin:0 auto 30px;border:1px solid rgba(215,173,88,.42);outline:1px solid rgba(215,173,88,.13);outline-offset:5px;background:rgba(2,27,21,.35);font-size:clamp(22px,4vw,34px)!important}.signature{color:var(--gold-light)}
+@media(max-width:560px){.section{padding:88px 22px}.section:before{inset:12px;border-radius:44% 44% 2px 2px/5% 5% 2px 2px}.parchment-panel{padding:48px 20px 38px}.couple-family{grid-template-columns:1fr;gap:8px;padding:20px 14px}.couple-family:before,.couple-family:after{display:none}.calendar-actions{flex-direction:column}.calendar-actions a{width:min(100%,270px)}.hero:before{inset:10px}.hero:after{inset:19px}}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{scroll-behavior:auto!important;animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}}
