@@ -200,3 +200,58 @@ body:before{opacity:.13;background-size:190px 190px,54px 54px,54px 54px}
 .closing-section{background:radial-gradient(ellipse at 50% 0%,rgba(28,91,67,.35),transparent 54%),url("assets/images/islamic-geometric-tile.svg"),linear-gradient(180deg,#062b24,#021813);background-size:auto,190px 190px,auto}.closing-arabic{max-width:820px;margin:0 auto 30px;border:1px solid rgba(215,173,88,.42);outline:1px solid rgba(215,173,88,.13);outline-offset:5px;background:rgba(2,27,21,.35);font-size:clamp(22px,4vw,34px)!important}.signature{color:var(--gold-light)}
 @media(max-width:560px){.section{padding:88px 22px}.section:before{inset:12px;border-radius:44% 44% 2px 2px/5% 5% 2px 2px}.parchment-panel{padding:48px 20px 38px}.couple-family{grid-template-columns:1fr;gap:8px;padding:20px 14px}.couple-family:before,.couple-family:after{display:none}.calendar-actions{flex-direction:column}.calendar-actions a{width:min(100%,270px)}.hero:before{inset:10px}.hero:after{inset:19px}}
 @media(prefers-reduced-motion:reduce){*,*::before,*::after{scroll-behavior:auto!important;animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}}
+
+
+/* Requested readability refinements */
+body {
+  background-image: radial-gradient(ellipse at 50% 0%, rgba(30,103,75,.16), transparent 55%);
+}
+body:before {
+  opacity: .022 !important;
+  background-image:
+    url("assets/images/islamic-geometric-tile.svg"),
+    linear-gradient(45deg, transparent 46%, rgba(215,173,88,.045) 48%, transparent 50%),
+    linear-gradient(-45deg, transparent 46%, rgba(215,173,88,.04) 48%, transparent 50%) !important;
+  background-size: 220px 220px, 54px 54px, 54px 54px !important;
+}
+.hero {
+  background-image:
+    radial-gradient(ellipse at 50% 42%, rgba(34,105,74,.38), transparent 48%),
+    linear-gradient(180deg, rgba(3,25,20,.35), rgba(3,25,20,.86)),
+    linear-gradient(145deg, #031c17, #0a4534 52%, #031b16) !important;
+  background-size: auto, auto, auto !important;
+}
+.countdown-section {
+  background-image:
+    radial-gradient(ellipse at 50% 45%, rgba(22,94,68,.35), transparent 62%),
+    linear-gradient(135deg, #031d18, #0a3b2e 50%, #031e18) !important;
+  background-size: auto, auto !important;
+}
+.closing-section {
+  background-image:
+    radial-gradient(ellipse at 50% 0%, rgba(28,91,67,.3), transparent 54%),
+    linear-gradient(180deg, #062b24, #021813) !important;
+  background-size: auto, auto !important;
+}
+.invitation-heading,
+.countdown-heading {
+  text-wrap: nowrap;
+  white-space: normal;
+}
+.invitation-heading span,
+.invitation-heading em,
+.countdown-heading span,
+.countdown-heading em {
+  display: block;
+  white-space: nowrap;
+  word-break: keep-all;
+  overflow-wrap: normal;
+}
+@media (max-width: 560px) {
+  .invitation-heading { font-size: clamp(22px, 6.2vw, 34px) !important; letter-spacing: .015em !important; }
+  .countdown-heading { font-size: clamp(21px, 6vw, 32px) !important; letter-spacing: .015em !important; }
+}
+@media (max-width: 360px) {
+  .invitation-heading { font-size: 5.8vw !important; }
+  .countdown-heading { font-size: 5.6vw !important; }
+}
