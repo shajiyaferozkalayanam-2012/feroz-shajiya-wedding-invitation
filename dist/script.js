@@ -1,4 +1,16 @@
 (() => {
+  // Always open shared/reloaded invitation URLs at the first landing screen.
+  // The Enter Our Story button still navigates to #invitation after the visitor taps it.
+  if ('scrollRestoration' in history) history.scrollRestoration = 'manual';
+  function resetSharedLandingUrl() {
+    if (window.location.hash) {
+      history.replaceState(null, document.title, window.location.pathname + window.location.search);
+      window.scrollTo(0, 0);
+    }
+  }
+  window.addEventListener('pageshow', resetSharedLandingUrl);
+  resetSharedLandingUrl();
+
 
   // Logo fallback: try the repository-root image first, then the assets path.
   const coupleLogo = document.getElementById('coupleLogo');
