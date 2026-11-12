@@ -96,7 +96,9 @@
     }
   });
 
-  // Attempt to start music as soon as the invitation opens.
+  // Attempt audible playback immediately when the invitation opens.
+  music.volume = 1;
+  music.muted = false;
   startWeddingMusic();
 
   // If the browser blocks autoplay, the first tap/key press starts it.

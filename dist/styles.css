@@ -256,3 +256,23 @@ body:before {
     letter-spacing: 0 !important;
   }
 }
+
+/* Final readability refinements */
+body::before { opacity: 0.008 !important; }
+.hero::before, .hero::after, .countdown-section::before, .countdown-section::after,
+.closing-section::before, .closing-section::after { opacity: 0.008 !important; }
+h2 .nowrap, .chapter-heading, .countdown-heading span, .countdown-heading em {
+  white-space: nowrap !important;
+}
+.countdown-heading { font-size: clamp(1.18rem, 4.2vw, 2.35rem) !important; }
+@media (max-width: 390px) {
+  .countdown-heading { font-size: clamp(1.02rem, 4vw, 1.25rem) !important; letter-spacing: .035em !important; }
+}
+
+.invitation-heading span, .invitation-heading em,
+.countdown-heading span, .countdown-heading em {
+  display: block !important;
+  white-space: nowrap !important;
+  word-break: keep-all !important;
+  overflow-wrap: normal !important;
+}
