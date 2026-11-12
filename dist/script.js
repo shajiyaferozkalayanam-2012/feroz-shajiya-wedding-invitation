@@ -23,7 +23,7 @@
     });
   }
 
-  const weddingDate = new Date('2026-12-20T00:00:00+05:30').getTime();
+  const weddingDate = new Date('2026-12-20T09:30:00+05:30').getTime();
   const fields = {
     days: document.getElementById('days'),
     hours: document.getElementById('hours'),
@@ -140,7 +140,7 @@
 
   // Optional: enter the WhatsApp number in international format, digits only.
   // Leave empty to keep RSVP as an on-page selection only.
-  const whatsappNumber = '';
+  const whatsappNumber = '918925019882';
   const rsvpNote = document.getElementById('rsvpNote');
   document.querySelectorAll('.rsvp-button').forEach(button => {
     button.addEventListener('click', () => {
