@@ -54,12 +54,38 @@
   const musicLabel = document.getElementById('musicLabel');
   const musicSources = ['./wedding-music.mp3', './assets/music/wedding-music.mp3'];
   let musicSourceIndex = 0;
+  let musicStarted = false;
 
   function setMusicLabel(label, ariaLabel) {
     musicLabel.textContent = label;
     musicToggle.setAttribute('aria-label', ariaLabel);
   }
 
+  async function startWeddingMusic() {
+    if (musicStarted && !music.paused) return true;
+    try {
+      if (!music.getAttribute('src') && !music.querySelector('source')?.getAttribute('src')) {
+        music.src = musicSources[musicSourceIndex];
+      }
+      music.load();
+      await music.play();
+      musicStarted = true;
+      setMusicLabel('Music on', 'Pause background music');
+      return true;
+    } catch (error) {
+      // Audible autoplay is restricted by many browsers. Retry on the visitor's first interaction.
+      setMusicLabel('Tap to enable music', 'Tap to enable wedding music');
+      return false;
+    }
+  }
+
+  music.addEventListener('playing', () => {
+    musicStarted = true;
+    setMusicLabel('Music on', 'Pause background music');
+  });
+  music.addEventListener('pause', () => {
+    if (!music.ended && !music.error) setMusicLabel('Music off', 'Play background music');
+  });
   music.addEventListener('error', () => {
     if (musicSourceIndex < musicSources.length - 1) {
       musicSourceIndex += 1;
@@ -70,42 +96,25 @@
     }
   });
 
-  music.addEventListener('playing', () => setMusicLabel('Music on', 'Pause background music'));
-  music.addEventListener('pause', () => {
-    if (!music.ended && !music.error) setMusicLabel('Music off', 'Play background music');
-  });
+  // Attempt to start music as soon as the invitation opens.
+  startWeddingMusic();
+
+  // If the browser blocks autoplay, the first tap/key press starts it.
+  const enableMusicOnFirstInteraction = () => {
+    if (music.paused) startWeddingMusic();
+    document.removeEventListener('pointerdown', enableMusicOnFirstInteraction);
+    document.removeEventListener('keydown', enableMusicOnFirstInteraction);
+  };
+  document.addEventListener('pointerdown', enableMusicOnFirstInteraction, { once: true });
+  document.addEventListener('keydown', enableMusicOnFirstInteraction, { once: true });
 
   musicToggle.addEventListener('click', async () => {
     if (!music.paused) {
       music.pause();
       return;
     }
-    try {
-      if (music.readyState === 0) {
-        music.src = musicSources[musicSourceIndex];
-        music.load();
-      }
-      await music.play();
-      setMusicLabel('Music on', 'Pause background music');
-    } catch (error) {
-      // If the root-level audio file is absent, try the assets folder once.
-      if (musicSourceIndex < musicSources.length - 1) {
-        musicSourceIndex += 1;
-        music.src = musicSources[musicSourceIndex];
-        music.load();
-        try {
-          await music.play();
-          setMusicLabel('Music on', 'Pause background music');
-          return;
-        } catch (fallbackError) {
-          setMusicLabel('Tap to retry', 'Retry wedding music');
-        }
-      } else {
-        setMusicLabel('Tap to retry', 'Retry wedding music');
-      }
-    }
+    await startWeddingMusic();
   });
-
 
   // Refined entrance effects: reveal content as each chapter enters view.
   const revealTargets = document.querySelectorAll(

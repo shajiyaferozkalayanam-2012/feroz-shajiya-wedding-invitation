@@ -139,11 +139,10 @@ body:before{opacity:.19;background-image:
 }
 
 body:before{
-  background-image:url("assets/images/islamic-geometric-tile.svg"),
-    linear-gradient(45deg,transparent 46%,rgba(215,173,88,.12) 48%,transparent 50%),
-    linear-gradient(-45deg,transparent 46%,rgba(215,173,88,.10) 48%,transparent 50%);
-  background-size:180px 180px,54px 54px,54px 54px;
-  opacity:.10;
+  background-image:linear-gradient(45deg,transparent 46%,rgba(215,173,88,.025) 48%,transparent 50%),
+    linear-gradient(-45deg,transparent 46%,rgba(215,173,88,.02) 48%,transparent 50%);
+  background-size:72px 72px,72px 72px;
+  opacity:.012;
 }
 
 
@@ -168,9 +167,9 @@ body:before{
 
 /* ROYAL ARABIAN × MOROCCAN × OTTOMAN FUSION — rich ornamental layer */
 :root{--emerald:#06382c;--emerald-2:#0a4737;--emerald-3:#145844;--gold:#c99a45;--gold-light:#f4d995;--gold-deep:#80531c;--ivory:#f4ecd9;--parchment:#efe2c4}
-body{background:#041f19;background-image:radial-gradient(ellipse at 50% 0%,rgba(30,103,75,.26),transparent 55%),url("assets/images/islamic-geometric-tile.svg");background-size:auto,220px 220px;background-attachment:fixed}
-body:before{opacity:.13;background-size:190px 190px,54px 54px,54px 54px}
-.hero{background:radial-gradient(ellipse at 50% 42%,rgba(34,105,74,.5),transparent 48%),linear-gradient(180deg,rgba(3,25,20,.35),rgba(3,25,20,.86)),url("assets/images/islamic-geometric-tile.svg"),linear-gradient(145deg,#031c17,#0a4534 52%,#031b16);background-size:auto,auto,180px 180px,auto}
+body{background:#041f19;background-image:radial-gradient(ellipse at 50% 0%,rgba(30,103,75,.18),transparent 55%);background-attachment:fixed}
+body:before{opacity:.008;background-size:72px 72px,72px 72px}
+.hero{background:radial-gradient(ellipse at 50% 42%,rgba(34,105,74,.38),transparent 48%),linear-gradient(180deg,rgba(3,25,20,.35),rgba(3,25,20,.86)),linear-gradient(145deg,#031c17,#0a4534 52%,#031b16)}
 .hero:before{inset:17px;border-radius:46% 46% 4px 4px/25% 25% 4px 4px;border-color:rgba(231,190,103,.46);box-shadow:inset 0 0 0 7px rgba(201,154,69,.045),0 0 35px rgba(201,154,69,.08)}
 .hero:after{inset:28px;border-radius:46% 46% 2px 2px/25% 25% 2px 2px;border-color:rgba(231,190,103,.3)}
 .arch-outer{width:min(88vw,760px);height:91%;top:4%;border:2px solid rgba(224,181,93,.46);border-bottom:0;border-radius:50% 50% 0 0;box-shadow:0 0 0 8px rgba(201,154,69,.035),0 0 0 10px rgba(201,154,69,.13),inset 0 0 50px rgba(201,154,69,.07)}
@@ -194,64 +193,66 @@ body:before{opacity:.13;background-size:190px 190px,54px 54px,54px 54px}
 .date-emblem{display:grid;place-items:center;width:118px;height:118px;margin:22px auto 10px;border:2px solid #b98a3f;outline:1px solid rgba(185,138,63,.45);outline-offset:5px;border-radius:50%;font:600 65px/1 var(--serif);color:#254235;box-shadow:inset 0 0 0 7px rgba(185,138,63,.12)}
 .date-weekday{margin:10px 0 0!important;color:#6d512c!important;letter-spacing:.35em;font-size:12px!important}.date-month{margin:0 0 18px!important;color:#273d30!important;font:500 clamp(27px,5vw,40px)/1.2 var(--serif)!important;letter-spacing:.08em}.date-month span{color:#9a6a2b}
 .calendar-note,.calendar-timezone{color:#725a38!important}.calendar-actions .gold-button{background:linear-gradient(135deg,#9d702f,#d4aa5b);color:#172c22}.calendar-actions .outline-button{color:#765425;border-color:#a87c3c;background:transparent}.calendar-actions .outline-button:before{border-color:rgba(151,105,43,.3)}
-.countdown-section{background:radial-gradient(ellipse at 50% 45%,rgba(22,94,68,.42),transparent 62%),url("assets/images/islamic-geometric-tile.svg"),linear-gradient(135deg,#031d18,#0a3b2e 50%,#031e18);background-size:auto,190px 190px,auto}.countdown{border:1px solid rgba(222,181,98,.42);outline:1px solid rgba(222,181,98,.13);outline-offset:6px;padding:28px 16px}.countdown div{border:1px solid rgba(222,181,98,.28);margin:5px;background:rgba(2,25,19,.28)}.countdown strong{color:#f2d28d}
+.countdown-section{background:radial-gradient(ellipse at 50% 45%,rgba(22,94,68,.30),transparent 62%),linear-gradient(135deg,#031d18,#0a3b2e 50%,#031e18)}.countdown{border:1px solid rgba(222,181,98,.42);outline:1px solid rgba(222,181,98,.13);outline-offset:6px;padding:28px 16px}.countdown div{border:1px solid rgba(222,181,98,.28);margin:5px;background:rgba(2,25,19,.28)}.countdown strong{color:#f2d28d}
 .celebration-list article{border:1px solid rgba(221,178,91,.43);border-left:1px solid rgba(221,178,91,.43);outline:1px solid rgba(221,178,91,.12);outline-offset:4px;padding:24px 18px;background:linear-gradient(120deg,rgba(16,83,61,.8),rgba(2,27,21,.88))}.celebration-list article:after{content:"✦";position:absolute;right:14px;top:12px;color:rgba(235,199,120,.7)}
 .venue-card{max-width:560px;padding:45px 26px}.rsvp-actions{gap:15px}
-.closing-section{background:radial-gradient(ellipse at 50% 0%,rgba(28,91,67,.35),transparent 54%),url("assets/images/islamic-geometric-tile.svg"),linear-gradient(180deg,#062b24,#021813);background-size:auto,190px 190px,auto}.closing-arabic{max-width:820px;margin:0 auto 30px;border:1px solid rgba(215,173,88,.42);outline:1px solid rgba(215,173,88,.13);outline-offset:5px;background:rgba(2,27,21,.35);font-size:clamp(22px,4vw,34px)!important}.signature{color:var(--gold-light)}
+.closing-section{background:radial-gradient(ellipse at 50% 0%,rgba(28,91,67,.25),transparent 54%),linear-gradient(180deg,#062b24,#021813)}.closing-arabic{max-width:820px;margin:0 auto 30px;border:1px solid rgba(215,173,88,.42);outline:1px solid rgba(215,173,88,.13);outline-offset:5px;background:rgba(2,27,21,.35);font-size:clamp(22px,4vw,34px)!important}.signature{color:var(--gold-light)}
 @media(max-width:560px){.section{padding:88px 22px}.section:before{inset:12px;border-radius:44% 44% 2px 2px/5% 5% 2px 2px}.parchment-panel{padding:48px 20px 38px}.couple-family{grid-template-columns:1fr;gap:8px;padding:20px 14px}.couple-family:before,.couple-family:after{display:none}.calendar-actions{flex-direction:column}.calendar-actions a{width:min(100%,270px)}.hero:before{inset:10px}.hero:after{inset:19px}}
 @media(prefers-reduced-motion:reduce){*,*::before,*::after{scroll-behavior:auto!important;animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}}
 
 
-/* Requested readability refinements */
+/* FINAL READABILITY OVERRIDES — subdued geometry and unbroken headings */
 body {
-  background-image: radial-gradient(ellipse at 50% 0%, rgba(30,103,75,.16), transparent 55%);
+  background-image: radial-gradient(ellipse at 50% 0%, rgba(30,103,75,.14), transparent 55%) !important;
 }
 body:before {
-  opacity: .022 !important;
+  opacity: .008 !important;
   background-image:
-    url("assets/images/islamic-geometric-tile.svg"),
-    linear-gradient(45deg, transparent 46%, rgba(215,173,88,.045) 48%, transparent 50%),
-    linear-gradient(-45deg, transparent 46%, rgba(215,173,88,.04) 48%, transparent 50%) !important;
-  background-size: 220px 220px, 54px 54px, 54px 54px !important;
+    linear-gradient(45deg, transparent 49%, rgba(215,173,88,.018) 49.5%, transparent 50%),
+    linear-gradient(-45deg, transparent 49%, rgba(215,173,88,.015) 49.5%, transparent 50%) !important;
+  background-size: 80px 80px !important;
 }
 .hero {
   background-image:
-    radial-gradient(ellipse at 50% 42%, rgba(34,105,74,.38), transparent 48%),
+    radial-gradient(ellipse at 50% 42%, rgba(34,105,74,.34), transparent 48%),
     linear-gradient(180deg, rgba(3,25,20,.35), rgba(3,25,20,.86)),
     linear-gradient(145deg, #031c17, #0a4534 52%, #031b16) !important;
   background-size: auto, auto, auto !important;
 }
 .countdown-section {
-  background-image:
-    radial-gradient(ellipse at 50% 45%, rgba(22,94,68,.35), transparent 62%),
+  background-image: radial-gradient(ellipse at 50% 45%, rgba(22,94,68,.30), transparent 62%),
     linear-gradient(135deg, #031d18, #0a3b2e 50%, #031e18) !important;
-  background-size: auto, auto !important;
 }
 .closing-section {
-  background-image:
-    radial-gradient(ellipse at 50% 0%, rgba(28,91,67,.3), transparent 54%),
+  background-image: radial-gradient(ellipse at 50% 0%, rgba(28,91,67,.25), transparent 54%),
     linear-gradient(180deg, #062b24, #021813) !important;
-  background-size: auto, auto !important;
-}
-.invitation-heading,
-.countdown-heading {
-  text-wrap: nowrap;
-  white-space: normal;
 }
 .invitation-heading span,
 .invitation-heading em,
 .countdown-heading span,
 .countdown-heading em {
   display: block;
-  white-space: nowrap;
-  word-break: keep-all;
-  overflow-wrap: normal;
+  width: max-content;
+  max-width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  white-space: nowrap !important;
+  word-break: keep-all !important;
+  overflow-wrap: normal !important;
 }
 @media (max-width: 560px) {
-  .invitation-heading { font-size: clamp(22px, 6.2vw, 34px) !important; letter-spacing: .015em !important; }
-  .countdown-heading { font-size: clamp(21px, 6vw, 32px) !important; letter-spacing: .015em !important; }
+  .invitation-heading,
+  .countdown-heading {
+    width: 100%;
+    font-size: clamp(16px, 5.4vw, 29px) !important;
+    letter-spacing: .01em !important;
+    line-height: 1.15 !important;
+  }
 }
 @media (max-width: 360px) {
-  .invitation-heading { font-size: 5.8vw !important; }
-  .countdown-heading { font-size: 5.6vw !important; }
+  .invitation-heading,
+  .countdown-heading {
+    font-size: clamp(15px, 5.1vw, 18px) !important;
+    letter-spacing: 0 !important;
+  }
 }
