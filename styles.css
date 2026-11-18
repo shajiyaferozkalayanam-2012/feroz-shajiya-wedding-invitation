@@ -276,3 +276,34 @@ h2 .nowrap, .chapter-heading, .countdown-heading span, .countdown-heading em {
   word-break: keep-all !important;
   overflow-wrap: normal !important;
 }
+
+
+/* Sharing our joy section — styled to match the supplied reference */
+.sharing-joy-section { text-align: center; padding: clamp(48px, 8vw, 86px) clamp(22px, 6vw, 54px); }
+.sharing-joy-section > .eyebrow { color: var(--gold, #d8b45c); font-weight: 600; letter-spacing: .09em; }
+.sharing-joy-section > h2 { margin: 24px 0 18px; font-size: clamp(30px, 7vw, 48px); font-weight: 400; letter-spacing: -.025em; }
+.sharing-joy-subtitle { margin: 0 0 34px; color: var(--gold, #d8b45c); font-size: clamp(23px, 5vw, 34px); font-style: italic; }
+.sharing-joy-message { max-width: 760px; margin: 0 auto 42px; font-size: clamp(17px, 3.8vw, 24px); line-height: 1.75; }
+.sharing-joy-callout, .sharing-joy-dua { max-width: 760px; margin: 18px auto 0; padding: 24px 18px; border-radius: 18px; font-size: clamp(19px, 4vw, 27px); line-height: 1.55; font-weight: 600; }
+.sharing-joy-callout { background: linear-gradient(135deg, #d8b45c, #e4c574); color: #063c30; border: 1px solid rgba(255,255,255,.2); }
+.sharing-joy-callout span { font-size: 1.1em; }
+.sharing-joy-dua { border: 1px solid var(--gold, #d8b45c); color: var(--gold, #d8b45c); background: rgba(255,255,255,.025); }
+@media (max-width: 420px) {
+  .sharing-joy-section { padding-left: 18px; padding-right: 18px; }
+  .sharing-joy-message { line-height: 1.65; }
+  .sharing-joy-callout, .sharing-joy-dua { padding: 20px 12px; }
+}
+
+/* Full-screen fade navigation from the opening scene to the invitation */
+html { scroll-behavior: auto !important; }
+body.page-transition-out main { opacity: 0; transition: opacity 460ms ease-in; }
+body.page-transition-in main { opacity: 1; animation: invitationPageFadeIn 520ms ease-out both; }
+.hero.entered { visibility: hidden; pointer-events: none; }
+@keyframes invitationPageFadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+@media (prefers-reduced-motion: reduce) {
+  body.page-transition-out main,
+  body.page-transition-in main { transition: none; animation: none; }
+}

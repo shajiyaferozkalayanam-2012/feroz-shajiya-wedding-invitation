@@ -47,7 +47,38 @@
 
   const hero = document.querySelector('.hero');
   const enterLink = document.querySelector('.hero .gold-button[href="#invitation"]');
-  enterLink.addEventListener('click', () => hero.classList.add('entered'));
+  const invitationPage = document.getElementById('invitation');
+
+  enterLink.addEventListener('click', async (event) => {
+    event.preventDefault();
+    if (enterLink.dataset.transitioning === 'true') return;
+    enterLink.dataset.transitioning = 'true';
+
+    // Start audio immediately inside the Enter Our Story click handler.
+    // Calling play() here (before any timer/animation await) preserves the browser's
+    // user-activation permission for audible playback.
+    music.muted = false;
+    music.volume = 1;
+    const enterMusicPromise = music.play();
+    if (enterMusicPromise && typeof enterMusicPromise.then === 'function') {
+      enterMusicPromise.then(() => {
+        musicStarted = true;
+        setMusicLabel('Music on', 'Pause background music');
+      }).catch(() => {
+        setMusicLabel('Tap to enable music', 'Tap to enable wedding music');
+      });
+    }
+
+    // Fade the opening screen away, switch to the invitation section, then fade in.
+    document.body.classList.add('page-transition-out');
+    await new Promise(resolve => window.setTimeout(resolve, 480));
+    hero.classList.add('entered');
+    window.scrollTo({ top: invitationPage.offsetTop, left: 0, behavior: 'instant' });
+    history.replaceState(null, document.title, window.location.pathname + window.location.search + '#invitation');
+    document.body.classList.remove('page-transition-out');
+    document.body.classList.add('page-transition-in');
+    window.setTimeout(() => document.body.classList.remove('page-transition-in'), 520);
+  });
 
   const music = document.getElementById('weddingMusic');
   const musicToggle = document.getElementById('musicToggle');
@@ -66,8 +97,8 @@
     try {
       if (!music.getAttribute('src') && !music.querySelector('source')?.getAttribute('src')) {
         music.src = musicSources[musicSourceIndex];
+        music.load();
       }
-      music.load();
       await music.play();
       musicStarted = true;
       setMusicLabel('Music on', 'Pause background music');
@@ -148,19 +179,4 @@
       particleLayer.appendChild(particle);
     }
   }
-
-  // Optional: enter the WhatsApp number in international format, digits only.
-  // Leave empty to keep RSVP as an on-page selection only.
-  const whatsappNumber = '918925019882';
-  const rsvpNote = document.getElementById('rsvpNote');
-  document.querySelectorAll('.rsvp-button').forEach(button => {
-    button.addEventListener('click', () => {
-      const response = button.dataset.response;
-      rsvpNote.textContent = `Your response: ${response}. JazakAllah Khair.`;
-      if (whatsappNumber) {
-        const message = `Wedding RSVP for Feroz Khan & Shajiya Thabasum (20 December 2026): ${response}`;
-        window.open(`https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`, '_blank', 'noopener');
-      }
-    });
-  });
 })();
