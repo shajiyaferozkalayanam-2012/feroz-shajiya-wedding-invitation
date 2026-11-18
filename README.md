@@ -21,8 +21,8 @@ Then upload the **contents of `dist/`** to the root of the GitHub Pages reposito
 Upload/replace `index.html`, `styles.css`, `script.js`, `feroz-shajiya-arabic-logo.png`, and the complete `assets/` folder in the repository root. Commit the changes. Keep the repository's existing Pages configuration (`main` / root).
 
 ## Family wording
-Feroz Khan — S/O Mr. S. I. Syed Ismail & Mrs. N. K. Samsath Begum
-Shajiya Thabasum — D/o Mr. M. Usman Baig & Mrs. U. Rasul Nisha
+Feroz Khan — S/O Mr. A.K.S. Syed Ismail & Mrs. N. K. Samsath Begum
+Shajiya Thabasum — D/O Mr. M. Usman Baig & Mrs. U. Rasul Nisha
 
 No "Groom" or "Bride" labels are displayed.
 
